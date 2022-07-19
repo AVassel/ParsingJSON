@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0F89FF28531D1900724EE2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0F89FE28531D1900724EE2 /* NetworkManager.swift */; };
+		3E0F8A05285342CB00724EE2 /* GoodInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0F8A04285342CB00724EE2 /* GoodInfoTableViewController.swift */; };
 		3E319BD12850913B00563364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E319BD02850913B00563364 /* AppDelegate.swift */; };
 		3E319BD32850913B00563364 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E319BD22850913B00563364 /* SceneDelegate.swift */; };
-		3E319BD52850913B00563364 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E319BD42850913B00563364 /* ViewController.swift */; };
+		3E319BD52850913B00563364 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E319BD42850913B00563364 /* MainViewController.swift */; };
 		3E319BD82850913B00563364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E319BD62850913B00563364 /* Main.storyboard */; };
 		3E319BDA2850913F00563364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E319BD92850913F00563364 /* Assets.xcassets */; };
 		3E319BDD2850913F00563364 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E319BDB2850913F00563364 /* LaunchScreen.storyboard */; };
+		3E319BEB2850C93D00563364 /* Good.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E319BEA2850C93D00563364 /* Good.swift */; };
+		3EFBFF0C2851DAA900BAB1A2 /* GoodsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFBFF0B2851DAA900BAB1A2 /* GoodsInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E0F89FE28531D1900724EE2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3E0F8A04285342CB00724EE2 /* GoodInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodInfoTableViewController.swift; sourceTree = "<group>"; };
 		3E319BCD2850913B00563364 /* ParsingJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParsingJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E319BD02850913B00563364 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E319BD22850913B00563364 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3E319BD42850913B00563364 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3E319BD42850913B00563364 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3E319BD72850913B00563364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E319BD92850913F00563364 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E319BDC2850913F00563364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E319BDE2850913F00563364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E319BEA2850C93D00563364 /* Good.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Good.swift; sourceTree = "<group>"; };
+		3EFBFF0B2851DAA900BAB1A2 /* GoodsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E0F89FD28531CFC00724EE2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3E0F89FE28531D1900724EE2 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		3E319BC42850913B00563364 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +72,11 @@
 		3E319BCF2850913B00563364 /* ParsingJSON */ = {
 			isa = PBXGroup;
 			children = (
-				3E319BE52850916800563364 /* App */,
+				3E0F89FD28531CFC00724EE2 /* Managers */,
+				3E319BE92850C91900563364 /* Models */,
 				3E319BE62850919300563364 /* ViewControllers */,
 				3E319BE42850915000563364 /* Storyboards */,
+				3E319BE52850916800563364 /* App */,
 				3E319BE72850919A00563364 /* Resources */,
 			);
 			path = ParsingJSON;
@@ -86,7 +104,9 @@
 		3E319BE62850919300563364 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3E319BD42850913B00563364 /* ViewController.swift */,
+				3E319BD42850913B00563364 /* MainViewController.swift */,
+				3EFBFF0B2851DAA900BAB1A2 /* GoodsInfoViewController.swift */,
+				3E0F8A04285342CB00724EE2 /* GoodInfoTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -97,6 +117,14 @@
 				3E319BD92850913F00563364 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3E319BE92850C91900563364 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3E319BEA2850C93D00563364 /* Good.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E319BD52850913B00563364 /* ViewController.swift in Sources */,
+				3E0F89FF28531D1900724EE2 /* NetworkManager.swift in Sources */,
+				3E319BD52850913B00563364 /* MainViewController.swift in Sources */,
+				3E0F8A05285342CB00724EE2 /* GoodInfoTableViewController.swift in Sources */,
 				3E319BD12850913B00563364 /* AppDelegate.swift in Sources */,
+				3EFBFF0C2851DAA900BAB1A2 /* GoodsInfoViewController.swift in Sources */,
 				3E319BD32850913B00563364 /* SceneDelegate.swift in Sources */,
+				3E319BEB2850C93D00563364 /* Good.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
