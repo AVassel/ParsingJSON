@@ -21,10 +21,15 @@ class GoodInfoTableViewController: UITableViewController {
     }
     
     func fetchData() {
-        NetworkManager.fetchGoodInfo(from: link) { good in
-            self.goodsInfo = good
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+        NetworkManager.fetchGoodInfo(from: link) { result in
+            switch result {
+            case .success(let good):
+                self.goodsInfo = good
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
             }
         }
     }
