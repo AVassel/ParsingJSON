@@ -15,7 +15,7 @@ class NetworkManager {
         case decodingError
     }
     
-    static func fetchGoodInfo(from url: String, with completion: @escaping(Result<[Good], NetworkError>) -> Void) {
+    static func fetch<T: Decodable>(dataType: T.Type, from url: String, with completion: @escaping(Result<T, NetworkError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.invalidURL))
             return
@@ -29,9 +29,11 @@ class NetworkManager {
             }
             
             do {
-                let goodsInfo = try JSONDecoder().decode([Good].self, from: data)
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let type = try decoder.decode(T.self, from: data)
                 DispatchQueue.main.async {
-                    completion(.success(goodsInfo))
+                    completion(.success(type))
                 }
             } catch {
                 completion(.failure(.decodingError))

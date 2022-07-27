@@ -10,15 +10,15 @@ struct Good: Decodable {
     let color:          String?
     let department:     String?
     let material:       String?
-    let product_name:   String?
+    let productName:   String?
     let price:          Double?
-    let promo_code:     String?
+    let promoCode:     String?
     
     var goodInfo: String {
                             """
                             Артикул: \(id ?? 0)
                             Отдел: \(department ?? "")
-                            Название: \(product_name ?? "")
+                            Название: \(productName ?? "")
                             Материал: \(material ?? "")
                             Цвет: \(color ?? "")
                             Стоимость: \(price ?? 0.0)

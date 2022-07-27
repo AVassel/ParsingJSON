@@ -21,7 +21,7 @@ class GoodInfoTableViewController: UITableViewController {
     }
     
     func fetchData() {
-        NetworkManager.fetchGoodInfo(from: link) { result in
+        NetworkManager.fetch(dataType: [Good].self, from: link, with: { result in
             switch result {
             case .success(let good):
                 self.goodsInfo = good
@@ -31,7 +31,7 @@ class GoodInfoTableViewController: UITableViewController {
             case .failure(let error):
                 print(error)
             }
-        }
+        })
     }
 
     // MARK: - Table view data source
@@ -52,8 +52,8 @@ class GoodInfoTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let good = goodsInfo[indexPath.row]
-        promo = good.promo_code
-        navigationItem.backButtonTitle = good.product_name
+        promo = good.promoCode
+        navigationItem.backButtonTitle = good.productName
 
         performSegue(withIdentifier: "moreInfo", sender: self)
     }
