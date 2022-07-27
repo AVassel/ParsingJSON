@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class GoodInfoTableViewController: UITableViewController {
     var goodsPromoCount: Int!
@@ -21,17 +22,19 @@ class GoodInfoTableViewController: UITableViewController {
     }
     
     func fetchData() {
-        NetworkManager.fetch(dataType: [Good].self, from: link, with: { result in
-            switch result {
-            case .success(let good):
-                self.goodsInfo = good
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+        AF.request(link)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    self.goodsInfo = Good.getGoodsInfo(from: value)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                case .failure(let error):
+                    print(error)
                 }
-            case .failure(let error):
-                print(error)
             }
-        })
     }
 
     // MARK: - Table view data source

@@ -8,9 +8,7 @@
 import UIKit
 
 
-
 class MainViewController: UIViewController {
-
     @IBOutlet weak var numberOfGoodsLabel: UILabel!
     @IBOutlet weak var goodStepper: UIStepper!
     
