@@ -8,13 +8,13 @@
 import Foundation
 
 struct Good: Decodable {
-    let id:             Int?
-    let color:          String?
-    let department:     String?
-    let material:       String?
-    let productName:   String?
-    let price:          Double?
-    let promoCode:     String?
+    let id: Int?
+    let color: String?
+    let department: String?
+    let material: String?
+    let productName: String?
+    let price: Double?
+    let promoCode: String?
     
     var goodInfo: String {
                             """

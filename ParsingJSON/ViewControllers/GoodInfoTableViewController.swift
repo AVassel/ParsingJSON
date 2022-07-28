@@ -28,9 +28,7 @@ class GoodInfoTableViewController: UITableViewController {
                 switch dataResponse.result {
                 case .success(let value):
                     self.goodsInfo = Good.getGoodsInfo(from: value)
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
+                    self.tableView.reloadData()
                 case .failure(let error):
                     print(error)
                 }
